@@ -2,12 +2,12 @@
 #include<fstream>
 #include<vector>
 using namespace std;
-class car {
+class Car {
 public:
 	int size;
 	string name;
 	string model;
-	car(int s, string n, string m) :size(s), name(n), model(m)
+	Car(int s, string n, string m) :size(s), name(n), model(m)
 	{
 		fstream file;
 		file.open("cars.collection", ios::out | ios::app);
@@ -18,11 +18,11 @@ public:
 
 	}
 	void book();
-	void add(vector<car>& cars);
-	void rem(vector<car>& cars);
+	void add(vector<Car>& cars);
+	void rem(vector<Car>& cars);
 
 };
-void car::book() {
+void Car::book() {
 	fstream file;
 	int a;
 	string nam;
@@ -40,7 +40,7 @@ void car::book() {
 
 	file.close();
 }
-void car::add(vector<car>& cars)
+void Car::add(vector<Car>& cars)
 {
 	string na;
 	string mode;
@@ -51,9 +51,9 @@ void car::add(vector<car>& cars)
 	getline(cin, mode);
 	cout << "enter the size of the car" << endl;
 	cin >> si;
-	cars.push_back(car(si, na, mode));
+	cars.push_back(Car(si, na, mode));
 }
-void car::rem(vector<car>& cars)
+void Car::rem(vector<Car>& cars)
 {
 	string nam;
 	cout << "enter the car you want to remove:" << endl;
@@ -76,17 +76,17 @@ int main()
 	cout << "we can add the cars first and then you can select your car:" << endl;
 	cout << "press enter to add the cars in the showroom" << endl;
 	cin.ignore();
-	vector<car>cars;
-	cars.push_back(car(4, "ferrari", "2014"));
-	cars.push_back(car(5, "mehran", "2023"));
-	cars.push_back(car(9, "alto", "2013"));
+	vector<Car>cars;
+	cars.push_back(Car(4, "ferrari", "2014"));
+	cars.push_back(Car(5, "mehran", "2023"));
+	cars.push_back(Car(9, "alto", "2013"));
 	int c;
 	string ch = "yes";
-	cout << "now your choice to book your car from the showroom of cars:" << endl;
-	cout << "1) book order:" << endl;
-	cout << "2) add the car: " << endl;
-	cout << "3) remove the car:" << endl;
-	cout << "4) exit showroom:" << endl;
+	cout << "Now your choice to book your car from the showroom of cars:" << endl;
+	cout << "1)--book order:" << endl;
+	cout << "2)--add the car: " << endl;
+	cout << "3)--remove the car:" << endl;
+	cout << "4)--exit showroom:" << endl;
 	while (ch == "yes" || ch == "Yes" || ch == "YES") {
 		cin >> c;
 		switch (c)
