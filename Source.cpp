@@ -17,12 +17,22 @@ public:
 		file.close();
 
 	}
-	void book();
+	void show();
+	void dis();
 	void add(vector<Car>& cars);
 	void rem(vector<Car>& cars);
 
 };
-void Car::book() {
+void Car::dis()
+{
+	int h=15;
+	for(int i=0;i<h;i++)
+	{
+		cout<<"||";
+		cout<<"\t\t\t\t\t\t\tt||"<<endl;
+	}
+}
+void Car::show() {
 	fstream file;
 	int a;
 	string nam;
@@ -77,6 +87,7 @@ int main()
 	cout << "press enter to add the cars in the showroom" << endl;
 	cin.ignore();
 	vector<Car>cars;
+	cars[0].dis();
 	cars.push_back(Car(4, "ferrari", "2014"));
 	cars.push_back(Car(5, "mehran", "2023"));
 	cars.push_back(Car(9, "alto", "2013"));
@@ -92,7 +103,7 @@ int main()
 		switch (c)
 		{
 		case 1:
-			cars[0].book();
+			cars[0].show();
 			break;
 		case 2:
 			cars[0].add(cars);
