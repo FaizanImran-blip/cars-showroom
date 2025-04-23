@@ -2,12 +2,12 @@
 #include<fstream>
 #include<vector>
 using namespace std;
-class Car {
+class Cars {
 public:
 	int size;
 	string name;
 	string model;
-	Car(int s, string n, string m) :size(s), name(n), model(m)
+	Cars(int s, string n, string m) :size(s), name(n), model(m)
 	{
 		fstream file;
 		file.open("cars.collection", ios::out | ios::app);
@@ -19,20 +19,20 @@ public:
 	}
 	void show();
 	void dis();
-	void add(vector<Car>& cars);
-	void rem(vector<Car>& cars);
+	void add(vector<Cars>& car);
+	void rem(vector<Cars>& car);
 
 };
-void Car::dis()
+void Cars::dis()
 {
 	int h=15;
 	for(int i=0;i<h;i++)
 	{
 		cout<<"||";
-		cout<<"\t\t\t\t\t\t\tt||"<<endl;
+		cout<<"\t\t\t\t\t\t\t||"<<endl;
 	}
 }
-void Car::show() {
+void Cars::show() {
 	fstream file;
 	int a;
 	string nam;
@@ -50,7 +50,7 @@ void Car::show() {
 
 	file.close();
 }
-void Car::add(vector<Car>& cars)
+void Cars::add(vector<Cars>& car)
 {
 	string na;
 	string mode;
@@ -61,19 +61,19 @@ void Car::add(vector<Car>& cars)
 	getline(cin, mode);
 	cout << "enter the size of the car" << endl;
 	cin >> si;
-	cars.push_back(Car(si, na, mode));
+	car.push_back(Cars(si, na, mode));
 }
-void Car::rem(vector<Car>& cars)
+void Cars::rem(vector<Cars>& car)
 {
 	string nam;
 	cout << "enter the car you want to remove:" << endl;
 	cin.ignore();
 	getline(cin, nam);
-	for (auto i = cars.begin();i != cars.end();++i)
+	for (auto i = car.begin();i != car.end();++i)
 	{
 		if (i->name == nam)
 		{
-			cars.erase(i);
+			car.erase(i);
 			cout << "removed successfully:" << nam << endl;
 		}
 		else {  
@@ -86,11 +86,11 @@ int main()
 	cout << "we can add the cars first and then you can select your car:" << endl;
 	cout << "press enter to add the cars in the showroom" << endl;
 	cin.ignore();
-	vector<Car>cars;
-	cars[0].dis();
-	cars.push_back(Car(4, "ferrari", "2014"));
-	cars.push_back(Car(5, "mehran", "2023"));
-	cars.push_back(Car(9, "alto", "2013"));
+	vector<Cars>car;
+	car[0].dis();
+	car.push_back(Cars(4, "ferrari", "2014"));
+	car.push_back(Cars(5, "mehran", "2023"));
+	car.push_back(Cars(9, "alto", "2013"));
 	int c;
 	string ch = "yes";
 	cout << "Now your choice to book your car from the showroom of cars:" << endl;
@@ -103,13 +103,13 @@ int main()
 		switch (c)
 		{
 		case 1:
-			cars[0].show();
+			car[0].show();
 			break;
 		case 2:
-			cars[0].add(cars);
+			car[0].add(car);
 			break;
 		case 3:
-			cars[0].rem(cars);
+			car[0].rem(car);
 			break;
 			case 4:
 			cout<<"exiting showroom!"<<endl;
