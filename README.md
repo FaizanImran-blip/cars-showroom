@@ -1,5 +1,50 @@
-Features:
-Add Car: Users can add new cars to the showroom with their name, model, and size.
-Book Car: Users can view the available cars in the showroom and book them.
-Remove Car: Users can remove cars from the showroom inventory by specifying the car name.
-Persistent Data: Car details are stored in a file named cars.collection, which keeps the car data even after the program exits.
+# 🚗 Car Showroom Management System
+
+This is a simple console-based Car Showroom Management System written in C++. It allows users to manage a list of cars in a showroom, including adding, viewing, and removing cars. All data is stored in a local file (`cars.collection`) for persistence.
+
+---
+
+## 📋 Features
+
+- View all available cars in the showroom
+- Add a new car with name, model, and size
+- Remove an existing car by name
+- File-based storage to retain data between sessions
+- Text-based UI with simple menu options
+
+---
+
+## 📁 File Structure
+
+- `main.cpp` - The source code file containing the complete program.
+- `cars.collection` - A text file created automatically to store car records.
+
+---
+
+## 🛠️ How It Works
+
+1. **Car Addition**  
+   When a car is added, it is stored in memory **and** written to `cars.collection`.
+
+2. **Viewing Cars**  
+   The `show()` function reads and displays all entries from `cars.collection`.
+
+3. **Removing a Car**  
+   A car is removed from memory (current session only) based on the name provided by the user.
+
+> ⚠️ Note: Removing a car does **not** update the `cars.collection` file. File updating would require rewriting the entire file manually.
+
+---
+
+## 🧪 Sample Cars on Startup
+
+When the program starts, three cars are added by default:
+
+- Ferrari (2014) — Size: 4  
+- Mehran (2023) — Size: 5  
+- Alto (2013) — Size: 9  
+
+---
+
+## 🧾 Example Usage
+
