@@ -3,13 +3,13 @@
 #include <vector>
 using namespace std;
 
-class Car {
+class Cars{
 public:
 	int size;
 	string name;
 	string model;
 
-	Car(int s, string n, string m) : size(s), name(n), model(m) {
+	Cars(int s, string n, string m) : size(s), name(n), model(m) {
 		fstream file;
 		file.open("cars.collection", ios::out | ios::app);
 		file << size << "*" << name << "*" << model << "*" << endl;
@@ -18,11 +18,11 @@ public:
 
 	void show();
 	void dis();
-	void add(vector<Car>& ca);
-	void rem(vector<Car>& ca);
+	void add(vector<Cars>& ca);
+	void rem(vector<Cars>& ca);
 };
 
-void Car::dis() {
+void Cars::dis() {
 	int h = 15;
 	for (int i = 0; i < h; i++) {
 		cout << "||";
@@ -30,7 +30,7 @@ void Car::dis() {
 	}
 }
 
-void Car::show() {
+void Cars::show() {
 	fstream file;
 	int a;
 	string nam;
@@ -47,7 +47,7 @@ void Car::show() {
 	file.close();
 }
 
-void Car::add(vector<Car>& ca) {
+void Cars::add(vector<Cars>& ca) {
 	string na;
 	string mode;
 	int si;
@@ -58,10 +58,10 @@ void Car::add(vector<Car>& ca) {
 	getline(cin, mode);
 	cout << "Enter the size of the car:" << endl;
 	cin >> si;
-	ca.push_back(Car(si, na, mode));
+	ca.push_back(Cars(si, na, mode));
 }
 
-void Car::rem(vector<Car>& ca) {
+void Cars::rem(vector<Cars>& ca) {
 	string nam;
 	cout << "Enter the car you want to remove:" << endl;
 	cin.ignore();
@@ -86,13 +86,13 @@ int main() {
 	cout << "Press enter to add the cars in the showroom" << endl;
 	cin.ignore();
 
-	vector<Car> ca;
-	Car temp(0, "", "");
+	vector<Cars> ca;
+	Cars temp(0, "", "");
 	temp.dis();
 
-	ca.push_back(Car(4, "ferrari", "2014"));
-	ca.push_back(Car(5, "mehran", "2023"));
-	ca.push_back(Car(9, "alto", "2013"));
+	ca.push_back(Cars(4, "ferrari", "2014"));
+	ca.push_back(Cars(5, "mehran", "2023"));
+	ca.push_back(Cars(9, "alto", "2013"));
 
 	int choice;
 	string ch = "yes";
