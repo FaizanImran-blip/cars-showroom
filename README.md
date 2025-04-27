@@ -14,13 +14,6 @@ This is a simple console-based Car Showroom Management System written in C++. It
 
 ---
 
-## 📁 File Structure
-
-- `main.cpp` - The source code file containing the complete program.
-- `cars.collection` - A text file created automatically to store car records.
-
----
-
 ## 🛠️ How It Works
 
 1. **Car Addition**  
