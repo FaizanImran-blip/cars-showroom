@@ -39,5 +39,3 @@ When the program starts, three cars are added by default:
 
 ---
 
-## 🧾 Example Usage
-
