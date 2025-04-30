@@ -11,7 +11,7 @@ public:
 
 	Cars(int s, string n, string m) : size(s), name(n), model(m) {
 		fstream file;
-		file.open("cars.collection", ios::out );
+		file.open("cars.collection", ios::out |ios::app);
 		file << size << "*" << name << "*" << model << "*" << endl;
 		file.close();
 	}
