@@ -14,8 +14,6 @@ This is a simple console-based Car Showroom Management System written in C++. It
 
 ---
 
-## 🛠️ How It Works
-
 1. **Car Addition**  
    When a car is added, it is stored in memory **and** written to `cars.collection`.
 
