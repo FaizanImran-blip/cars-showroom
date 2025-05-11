@@ -1,5 +1,5 @@
 # 🚗 Car Showroom Management System
----
+
 This is a simple console-based Car Showroom Management System written in C++. It allows users to manage a list of cars in a showroom, including adding, viewing, and removing cars. All data is stored in a local file (`cars.collection`) for persistence.
 
 ## 📋 Features
